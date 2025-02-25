@@ -7,16 +7,17 @@ const errorsHandler = require("./middlewares/errorsHandler");
 const app = express();
 const { PORT, FE_URL } = process.env;
 
-//MIDDLEWARES STATICI
-app.use(express.static("public"));
-//MIDDLEWARES PARSING req.body
-app.use(express.json());
 //CORS
 app.use(
   cors({
     origin: FE_URL,
   })
 );
+
+//MIDDLEWARES STATICI
+app.use(express.static("public"));
+//MIDDLEWARES PARSING req.body
+app.use(express.json());
 //ROUTES
 app.use("/movies", moviesRouter);
 //MIDDLEWARES PER ERRORI
