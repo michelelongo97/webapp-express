@@ -8,6 +8,9 @@ router.get("/", movieController.index);
 //show
 router.get("/:id", movieController.show);
 
+//Store
+router.post("/:id/reviews", movieController.storeReview);
+
 //destroy
 router.delete("/:id", movieController.destroy);
 
